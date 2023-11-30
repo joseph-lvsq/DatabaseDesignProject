@@ -1,0 +1,41 @@
+﻿@using DatabaseDesignProject.Controllers
+@model Review
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Submit A Review</h1>
+</div>
+
+<form method="post" id="FormThatAddReview">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">ShoeID:</label>
+        <div class="col-sm-6">
+            <input type="number" type="hidden" class="form-control" asp-for="review_shoeID" id="review_shoeID" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Reviewer:</label>
+        <div class="col-sm-6">
+            <input type="text" readonly class="form-control" asp-for="reviewer" id="reviewer"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Review (1-10):</label>
+        <div class="col-sm-6">
+            <input type="number" step="any" class="form-control" max="10" min="1" asp-for="rating" id="rating" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Comments:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="rating_description" id="rating_description" />
+        </div>
+    </div>
+
+    <div class="col-sm-5 my-3">
+        <button class="btn btn-primary" type="submit">Submit Review</button>
+    </div>
+</form>

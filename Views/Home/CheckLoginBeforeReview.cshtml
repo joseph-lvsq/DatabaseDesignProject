@@ -1,0 +1,36 @@
+﻿@using DatabaseDesignProject.Controllers
+@model int  
+@* TODO create a LoginModel class *@
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Login</h1>
+</div>
+
+<form method="post" id="FormThatAddShoe">
+    <input id="shoeID" name="shoeID" type="hidden" value="@Model" />
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Username:</label>
+        <div class="col-sm-6">
+            <!--I removed asp-for="username" because stuff is not connected yet-->
+            <input type="text" class="form-control" id="username" name="username" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Password:</label>
+        <div class="col-sm-6">
+            <!--I removed asp-for="password" because stuff is not connected yet-->
+            <input type="text" class="form-control" id="password" name="password" />
+        </div>
+    </div>
+
+    <div class="col-sm-5 my-3">
+        <button class="btn btn-primary" type="submit">Login</button>
+    </div>
+</form>
+
+<span><b>IMPORTANT NOTE: If you get sent back to the shoe view, it means that your username and/or password was incorrect.</b></span>

@@ -1,0 +1,59 @@
+﻿@using DatabaseDesignProject.Controllers
+@model ViewShoeViewModel
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- html comment -->
+@*
+    comment
+*@
+<div class="text">
+    <h1 class="display-3">
+        @Model.current_shoe.brand_name
+        @Model.current_shoe.shoe_name
+
+    </h1>
+  
+    <h1 class="display-10">
+        $@Model.current_shoe.shoe_price
+    </h1>
+    <font size="+2">
+        <i>@Model.current_shoe.shoe_color</i>
+    </font>
+    <br />
+    <br />
+    <p>
+        @Model.current_shoe.shoe_description
+    </p>
+</div>
+<br />
+<a asp-action="CheckLoginBeforeAddToCart" asp-route-shoeID="@Model.current_shoe.shoeID">Add to Cart</a>
+<br />
+<br />
+<br />
+
+<div class="text">
+    <h1 class="display-9">
+        Reviews:
+    </h1>
+    <hr width="400" />
+
+    <!--NEED TO FIGURE OUT HOW TO INMPORT List<Review> MODEL FROM THE CONTROLLER-->
+    @foreach (var item in Model.current_shoe_reviews)
+    {
+
+        <span><b>@item.reviewer</b></span>
+        <br />
+        <span>Rating (out of 10): <b>@item.rating</b></span>
+        <br />
+        <span>@item.rating_description</span>
+        <br />
+        <hr width="200"/>
+        @* <p>----------------------------</p> *@
+        @* <a class="btn" asp-controller="" asp-action="EditShoe" asp-route-shoeID="@item.shoeID">Edit</a> *@
+    }
+</div>
+<a asp-action="CheckLoginBeforeReview" asp-route-shoeID="@Model.current_shoe.shoeID">Leave a Review</a>

@@ -1,0 +1,47 @@
+﻿@using DatabaseDesignProject.Controllers
+@model Shoe
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Sell a Shoe</h1>
+</div>
+
+<form method="post" id="FormThatAddShoe">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Brand</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="brand_name" id="brand"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Shoe Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="shoe_name" id="shoe_name"/>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Price</label>
+        <div class="col-sm-6">
+            <input type="number" step="any" class="form-control" asp-for="shoe_price" id="shoe_price" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Color</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="shoe_color" id="shoe_color" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Description</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" asp-for="shoe_description" id="shoe_description" />
+        </div>
+    </div>
+
+    <div class="col-sm-5 my-3">
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>

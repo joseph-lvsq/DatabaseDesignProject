@@ -1,0 +1,46 @@
+﻿@model List<Shoe>
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Shoes</h1>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>shoeID</th>
+            <th>brand</th>
+            <th>shoe_name</th>
+            <th>price</th>
+            <th>color</th>
+            @* <th>shoe_description</th> *@
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.shoeID</td>
+                <td>@item.brand_name</td>
+                <td>@item.shoe_name</td>
+                <td>@item.shoe_price</td>
+                <td>@item.shoe_color</td>
+                @* <td>@item.shoe_description</td> *@
+                <td>
+                    <a asp-action="ViewShoe" asp-route-shoeID="@item.shoeID">View</a>
+                </td>
+                <td>
+                    <a asp-action="EditShoe" asp-route-shoeID="@item.shoeID">Edit</a>
+                </td>
+                <td>
+                    <a asp-action="DeleteShoeConfirm" asp-route-shoeID="@item.shoeID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
